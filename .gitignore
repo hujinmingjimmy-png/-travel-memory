@@ -1,0 +1,41 @@
+# =========================
+# Frontend
+# =========================
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*
+!frontend/.env.example
+
+# =========================
+# Backend
+# =========================
+backend/target/
+backend/uploads/
+backend/logs/
+
+# =========================
+# IDEA
+# =========================
+.idea/
+**/.idea/
+*.iml
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# System
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Secrets
+# =========================
+.env
+*.secret
+/deploy/*.env
+/deploy/amap.conf

@@ -1,0 +1,30 @@
+# Install outside the repository, fill in the security code and restrict file access.
+set $tm_amap_security_code "REPLACE_WITH_AMAP_SECURITY_CODE";
+
+location /_AMapService/v4/map/styles {
+    limit_req zone=tm_map burst=50 nodelay;
+    limit_req_status 429;
+    access_log off;
+    set $args "$args&jscode=$tm_amap_security_code";
+    proxy_ssl_server_name on;
+    proxy_ssl_verify on;
+    proxy_ssl_trusted_certificate /etc/ssl/certs/ca-certificates.crt;
+    proxy_pass_request_headers off;
+    proxy_set_header Host $proxy_host;
+    proxy_set_header Referer $http_referer;
+    proxy_pass https://webapi.amap.com/v4/map/styles;
+}
+
+location /_AMapService/ {
+    limit_req zone=tm_map burst=50 nodelay;
+    limit_req_status 429;
+    access_log off;
+    set $args "$args&jscode=$tm_amap_security_code";
+    proxy_ssl_server_name on;
+    proxy_ssl_verify on;
+    proxy_ssl_trusted_certificate /etc/ssl/certs/ca-certificates.crt;
+    proxy_pass_request_headers off;
+    proxy_set_header Host $proxy_host;
+    proxy_set_header Referer $http_referer;
+    proxy_pass https://restapi.amap.com/;
+}

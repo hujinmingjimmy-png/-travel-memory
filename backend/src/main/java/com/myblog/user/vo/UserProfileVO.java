@@ -1,0 +1,2 @@
+package com.myblog.user.vo;
+public class UserProfileVO{private Long id;private String username;private String nickname;private String avatar;public Long getId(){return id;}public void setId(Long v){id=v;}public String getUsername(){return username;}public void setUsername(String v){username=v;}public String getNickname(){return nickname;}public void setNickname(String v){nickname=v;}public String getAvatar(){return avatar;}public void setAvatar(String v){avatar=v;}}

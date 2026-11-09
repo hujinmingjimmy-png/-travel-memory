@@ -1,0 +1,48 @@
+# Include under the http block after installing a certificate for the real domain.
+map $http_upgrade $tm_connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+limit_req_zone $binary_remote_addr zone=tm_auth:10m rate=10r/m;
+limit_req_zone $binary_remote_addr zone=tm_map:10m rate=20r/s;
+
+server {
+    listen 80;
+    server_name travel.example.com;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name travel.example.com;
+    ssl_certificate /etc/letsencrypt/live/travel.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/travel.example.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    client_max_body_size 65m;
+
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header Forwarded "";
+    proxy_set_header X-Forwarded-Host $host;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Port $server_port;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Prefix "";
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $tm_connection_upgrade;
+    proxy_read_timeout 300s;
+
+    location ~ ^/api/auth/(login|register)/?$ {
+        limit_req zone=tm_auth burst=5 nodelay;
+        limit_req_status 429;
+        proxy_pass http://127.0.0.1:8080;
+    }
+
+    # Optional AMap proxy. Enable the include after setting the server-side security code.
+    # include /etc/travel-memory/amap.conf;
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+    }
+}

@@ -1,0 +1,28 @@
+# 启用方式：--spring.profiles.active=prod
+# 部署环境必须提供这些变量，防止误用开发环境凭证。
+spring:
+  web:
+    resources:
+      static-locations: classpath:/webapp/
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+jwt:
+  secret: ${JWT_SECRET}
+travel:
+  # ★★★★★【旅行照片路径】★★★★★：设为持久目录；部署新版本时不要清空。
+  upload-dir: ${TRAVEL_UPLOAD_DIR}
+  video:
+    library-dir: ${TRAVEL_VIDEO_LIBRARY_DIR}
+  chat:
+    upload-dir: ${TRAVEL_CHAT_UPLOAD_DIR}
+  collab:
+    upload-dir: ${TRAVEL_COLLAB_UPLOAD_DIR}
+profile:
+  # ★★★★★【头像路径】★★★★★：也必须是持久目录。
+  avatar-upload-dir: ${PROFILE_AVATAR_UPLOAD_DIR}
+  appearance-upload-dir: ${PROFILE_APPEARANCE_UPLOAD_DIR}
+server:
+  address: 127.0.0.1
+  forward-headers-strategy: framework

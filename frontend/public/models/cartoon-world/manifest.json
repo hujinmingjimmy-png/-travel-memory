@@ -1,0 +1,101 @@
+{
+  "version": 3,
+  "entries": [
+    {
+      "id": "house-building-sample-house-a",
+      "category": "house",
+      "url": "/models/cartoon-world/packs/kenney-modular-buildings/Models/GLB format/building-sample-house-a.glb",
+      "source": "Kenney Modular Buildings",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "house-building-sample-house-b",
+      "category": "house",
+      "url": "/models/cartoon-world/packs/kenney-modular-buildings/Models/GLB format/building-sample-house-b.glb",
+      "source": "Kenney Modular Buildings",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "house-building-sample-house-c",
+      "category": "house",
+      "url": "/models/cartoon-world/packs/kenney-modular-buildings/Models/GLB format/building-sample-house-c.glb",
+      "source": "Kenney Modular Buildings",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "tower-building-sample-tower-a",
+      "category": "tower",
+      "url": "/models/cartoon-world/packs/kenney-modular-buildings/Models/GLB format/building-sample-tower-a.glb",
+      "source": "Kenney Modular Buildings",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "tower-building-sample-tower-b",
+      "category": "tower",
+      "url": "/models/cartoon-world/packs/kenney-modular-buildings/Models/GLB format/building-sample-tower-b.glb",
+      "source": "Kenney Modular Buildings",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "tower-building-sample-tower-c",
+      "category": "tower",
+      "url": "/models/cartoon-world/packs/kenney-modular-buildings/Models/GLB format/building-sample-tower-c.glb",
+      "source": "Kenney Modular Buildings",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "tower-building-sample-tower-d",
+      "category": "tower",
+      "url": "/models/cartoon-world/packs/kenney-modular-buildings/Models/GLB format/building-sample-tower-d.glb",
+      "source": "Kenney Modular Buildings",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "commercial-building-sample-house-c",
+      "category": "commercial",
+      "url": "/models/cartoon-world/packs/kenney-modular-buildings/Models/GLB format/building-sample-house-c.glb",
+      "source": "Kenney Modular Buildings",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "tree_small",
+      "category": "tree",
+      "url": "/models/cartoon-world/packs/kenney-nature-kit/Models/GLTF format/tree_small.glb",
+      "source": "Kenney Nature Kit",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "tree_oak",
+      "category": "tree",
+      "url": "/models/cartoon-world/packs/kenney-nature-kit/Models/GLTF format/tree_oak.glb",
+      "source": "Kenney Nature Kit",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "tree_pineRoundA",
+      "category": "tree",
+      "url": "/models/cartoon-world/packs/kenney-nature-kit/Models/GLTF format/tree_pineRoundA.glb",
+      "source": "Kenney Nature Kit",
+      "license": "CC0",
+      "weight": 1
+    },
+    {
+      "id": "rock_smallA",
+      "category": "rock",
+      "url": "/models/cartoon-world/packs/kenney-nature-kit/Models/GLTF format/rock_smallA.glb",
+      "source": "Kenney Nature Kit",
+      "license": "CC0",
+      "weight": 1
+    }
+  ]
+}

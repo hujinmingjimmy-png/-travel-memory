@@ -1,0 +1,66 @@
+# ======================================
+# 旅行照片上传配置
+# ======================================
+travel:
+  # ★★★★★【图片路径】★★★★★
+  # 图片保存在 Spring Boot 项目的 uploads/travel-media 目录
+  upload-dir: ${TRAVEL_UPLOAD_DIR:uploads/travel-media}
+  video:
+    library-dir: ${TRAVEL_VIDEO_LIBRARY_DIR:uploads/video-works}
+  chat:
+    upload-dir: ${TRAVEL_CHAT_UPLOAD_DIR:uploads/private-chat}
+  collab:
+    upload-dir: ${TRAVEL_COLLAB_UPLOAD_DIR:uploads/private-collab}
+
+
+# ======================================
+# Spring Boot 配置
+# ======================================
+spring:
+  profiles:
+    default: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  # 图片上传大小限制
+  servlet:
+    multipart:
+      max-file-size: 8MB
+      max-request-size: 65MB
+
+
+# ======================================
+# JWT 身份认证配置
+# ======================================
+jwt:
+  secret: ${JWT_SECRET}
+
+  # JWT 有效期：7天
+  expiration: 604800000
+
+# ======================================
+# 用户头像上传配置
+# ======================================
+profile:
+  # ★★★★★【个人头像保存路径】★★★★★
+  avatar-upload-dir: ${PROFILE_AVATAR_UPLOAD_DIR:uploads/avatars}
+
+
+doubao:
+  tts:
+    api-key: ${DOUBAO_TTS_API_KEY:}
+    resource-id: "seed-tts-2.0"
+    url: "https://openspeech.bytedance.com/api/v3/tts/unidirectional"
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+    import:
+      - optional:file:./backend/application-local.yml
+      - optional:file:./application-local.yml

@@ -1,0 +1,20 @@
+[Unit]
+Description=Travel Memory
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=travel-memory
+Group=travel-memory
+WorkingDirectory=/opt/travel-memory
+EnvironmentFile=/etc/travel-memory/travel-memory.env
+ExecStart=/usr/bin/java -jar /opt/travel-memory/travel-memory.jar
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=true
+StateDirectory=travel-memory
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+# Copy to application-local.yml and fill in the local values.
+spring:
+  datasource:
+    url: "jdbc:mysql://127.0.0.1:3306/travel_memory?serverTimezone=Asia/Shanghai&characterEncoding=UTF-8"
+    username: travel_memory
+    password: REPLACE_WITH_DATABASE_PASSWORD
+jwt:
+  secret: REPLACE_WITH_RANDOM_HEX
